@@ -18,5 +18,6 @@ const server = http.createServer((req, res) => {
   res.writeHead(302, { Location: target });
   res.end();
 });
-
-server.listen(p
+server.listen(process.env.PORT || 8080, () => {
+  console.log("Load balancer running...");
+});
